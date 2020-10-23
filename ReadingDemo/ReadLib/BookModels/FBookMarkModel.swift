@@ -34,12 +34,12 @@ class FBookMarkModel: NSObject,NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        bookID = aDecoder.decodeObject(forKey: "bookID") as! String
-        id = aDecoder.decodeObject(forKey: "id") as! String
-        name = aDecoder.decodeObject(forKey: "name") as! String
-        content = aDecoder.decodeObject(forKey: "content") as! String
-        time = aDecoder.decodeObject(forKey: "time") as! Date
-        location = aDecoder.decodeObject(forKey: "location") as!NSNumber
+        bookID = aDecoder.decodeObject(forKey: "bookID") as? String
+        id = aDecoder.decodeObject(forKey: "id") as? String
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        content = aDecoder.decodeObject(forKey: "content") as? String
+        time = aDecoder.decodeObject(forKey: "time") as? Date
+        location = aDecoder.decodeObject(forKey: "location") as?NSNumber
     }
     
     func encode(with aCoder: NSCoder) {

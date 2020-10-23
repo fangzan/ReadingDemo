@@ -37,9 +37,9 @@ class FBookModel: NSObject,NSCoding {
     required init?(coder aDecoder: NSCoder) {
         
         super.init()
-        bookID = aDecoder.decodeObject(forKey: "bookID") as! String
-        bookUrl = aDecoder.decodeObject(forKey: "bookUrl") as! URL
-        bookContent = aDecoder.decodeObject(forKey: "bookContent") as! String
+        bookID = aDecoder.decodeObject(forKey: "bookID") as? String
+        bookUrl = aDecoder.decodeObject(forKey: "bookUrl") as? URL
+        bookContent = aDecoder.decodeObject(forKey: "bookContent") as? String
         isLocalBook = aDecoder.decodeObject(forKey: "isLocalBook") as! NSNumber
         bookMarkModels = aDecoder.decodeObject(forKey: "bookMarkModels") as! [FBookMarkModel]
         bookBaseChapterModels = aDecoder.decodeObject(forKey: "bookBaseChapterModels") as! [FBookBaseChapterModel]
@@ -54,15 +54,13 @@ class FBookModel: NSObject,NSCoding {
         
     }
     
-    
-    
     /// 获得阅读模型
     class func bookModel(bookID:String) -> FBookModel {
         
         var bookModel:FBookModel!
         
         if FBookModel.IsExistBookModel(bookID: bookID) {
-            bookModel = BookKeyedUnarchiver(folderName: bookID, fileName: bookID) as! FBookModel
+            bookModel = BookKeyedUnarchiver(folderName: bookID, fileName: bookID) as? FBookModel
         } else {
             bookModel = FBookModel()
             bookModel.bookID = bookID

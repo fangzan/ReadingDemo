@@ -47,15 +47,15 @@ class FBookBaseChapterModel: NSObject,NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        bookID = aDecoder.decodeObject(forKey: "bookID") as! String
-        id = aDecoder.decodeObject(forKey: "id") as! String
+        bookID = aDecoder.decodeObject(forKey: "bookID") as? String
+        id = aDecoder.decodeObject(forKey: "id") as? String
         lastChapterId = aDecoder.decodeObject(forKey: "lastChapterId") as? String
         nextChapterId = aDecoder.decodeObject(forKey: "nextChapterId") as? String
-        name = aDecoder.decodeObject(forKey: "name") as! String
+        name = aDecoder.decodeObject(forKey: "name") as? String
         contentRange = aDecoder.decodeObject(forKey: "contentRange") as? NSRange
         lastContentRange = aDecoder.decodeObject(forKey: "lastContentRange") as? NSRange
         nextContentRange = aDecoder.decodeObject(forKey: "nextContentRange") as? NSRange
-        priority = aDecoder.decodeObject(forKey: "priority") as! NSNumber
+        priority = aDecoder.decodeObject(forKey: "priority") as? NSNumber
     }
     
     func encode(with aCoder: NSCoder) {

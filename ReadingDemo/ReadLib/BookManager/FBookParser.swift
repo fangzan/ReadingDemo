@@ -124,7 +124,7 @@ class FBookParser: NSObject {
         
         let startTime = CFAbsoluteTimeGetCurrent()
         // 搜索
-        var results:[NSTextCheckingResult] = GetContentCheckingResult(content: content)
+        let results:[NSTextCheckingResult] = GetContentCheckingResult(content: content)
         if results.count <= 0 { return bookBaseChapterModels }
         
         let endTime = CFAbsoluteTimeGetCurrent()

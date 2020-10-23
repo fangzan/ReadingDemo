@@ -204,7 +204,7 @@ class FReadAuxiliary: NSObject {
                 
                 CTLineGetTypographicBounds(line, &lineAscent, &lineDescent, &lineLeading)
                 
-                let contentRect:CGRect = CGRect(x: origin.x + xStart, y: origin.y - lineDescent, width: fabs(xEnd - xStart), height: lineAscent + lineDescent + lineLeading)
+                let contentRect:CGRect = CGRect(x: origin.x + xStart, y: origin.y - lineDescent, width: abs(xEnd - xStart), height: lineAscent + lineDescent + lineLeading)
                 
                 rects.append(contentRect)
             }

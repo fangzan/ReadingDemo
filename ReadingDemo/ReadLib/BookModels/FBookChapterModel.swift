@@ -49,16 +49,16 @@ class FBookChapterModel: NSObject,NSCoding {
     // MARK: -- NSCoding
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        bookID = aDecoder.decodeObject(forKey: "bookID") as! String
-        id = aDecoder.decodeObject(forKey: "id") as! String
+        bookID = aDecoder.decodeObject(forKey: "bookID") as? String
+        id = aDecoder.decodeObject(forKey: "id") as? String
         lastChapterId = aDecoder.decodeObject(forKey: "lastChapterId") as? String
         nextChapterId = aDecoder.decodeObject(forKey: "nextChapterId") as? String
-        name = aDecoder.decodeObject(forKey: "name") as! String
-        priority = aDecoder.decodeObject(forKey: "priority") as! NSNumber
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        priority = aDecoder.decodeObject(forKey: "priority") as? NSNumber
         lastContentRange = aDecoder.decodeObject(forKey: "lastContentRange") as? NSRange
         contentRange = aDecoder.decodeObject(forKey: "contentRange") as? NSRange
         nextContentRange = aDecoder.decodeObject(forKey: "nextContentRange") as? NSRange
-        content = aDecoder.decodeObject(forKey: "content") as! String
+        content = aDecoder.decodeObject(forKey: "content") as? String
         pageCount = aDecoder.decodeObject(forKey: "pageCount") as! NSNumber
         rangeArray = aDecoder.decodeObject(forKey: "rangeArray") as! [NSRange]
         bookAttribute = aDecoder.decodeObject(forKey: "bookAttribute") as! [NSAttributedString.Key:Any]
@@ -109,7 +109,7 @@ class FBookChapterModel: NSObject,NSCoding {
         
         var bookChapterModel:FBookChapterModel!
         if FBookChapterModel.IsExistBookChapterModel(bookID: bookID, chapterID: chapterID) { // 存在
-            bookChapterModel = BookKeyedUnarchiver(folderName: bookID, fileName: chapterID) as! FBookChapterModel
+            bookChapterModel = BookKeyedUnarchiver(folderName: bookID, fileName: chapterID) as? FBookChapterModel
             if isUpdateFont {bookChapterModel.updateFont(isSave: true)}
         }else{ // 不存在
             bookChapterModel = FBookChapterModel()

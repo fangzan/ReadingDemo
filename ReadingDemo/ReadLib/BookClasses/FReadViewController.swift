@@ -310,7 +310,7 @@ class FReadViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 let rect = GetReadTableViewFrame()
                 
                 // 显示章节Cell IndexPath
-                var indexPath = tableView.indexPathsForRows(in: CGRect(x: 0, y: tableView.contentOffset.y + FSpace_1, width: rect.width, height: rect.height - FSpace_1))!.first!
+                let indexPath = tableView.indexPathsForRows(in: CGRect(x: 0, y: tableView.contentOffset.y + FSpace_1, width: rect.width, height: rect.height - FSpace_1))!.first!
                 
                 // 章节ID
                 let chapterID:String = "\(dataArray[indexPath.section])"

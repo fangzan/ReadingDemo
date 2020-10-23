@@ -34,7 +34,7 @@ class FBookRecordModel: NSObject,NSCoding {
     // MARK: -- NSCoding
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        bookID = aDecoder.decodeObject(forKey: "bookID") as! String
+        bookID = aDecoder.decodeObject(forKey: "bookID") as? String
         bookChapterModel = aDecoder.decodeObject(forKey: "bookChapterModel") as? FBookChapterModel
         page = aDecoder.decodeObject(forKey: "page") as! NSNumber
     }
@@ -60,7 +60,7 @@ class FBookRecordModel: NSObject,NSCoding {
         
         var bookRecordModel:FBookRecordModel!
         if FBookRecordModel.IsExistBookRecordModel(bookID: bookID) { // 存在
-            bookRecordModel = BookKeyedUnarchiver(folderName: bookID, fileName: (bookID + FBookRecord)) as! FBookRecordModel
+            bookRecordModel = BookKeyedUnarchiver(folderName: bookID, fileName: (bookID + FBookRecord)) as? FBookRecordModel
             if isUpdateFont {bookRecordModel.updateFont(isSave: isSave)}
         }else{ // 不存在
             bookRecordModel = FBookRecordModel()
