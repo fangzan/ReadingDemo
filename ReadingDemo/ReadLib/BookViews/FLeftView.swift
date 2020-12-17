@@ -150,7 +150,7 @@ class FLeftView: FBaseView,FSegmentedControlDelegate,UITableViewDelegate,UITable
             
             cell?.textLabel?.numberOfLines = 1
             
-            cell?.textLabel?.font = FFont_18
+            cell?.textLabel?.font = FFont_14
             
         }else{ // 书签
             

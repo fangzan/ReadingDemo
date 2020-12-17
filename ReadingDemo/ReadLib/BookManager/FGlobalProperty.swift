@@ -83,6 +83,8 @@ let FMenuUIColor:UIColor = UIColor.black.withAlphaComponent(0.85)
 // MARK: -- 字体支持
 let FFont_10:UIFont = UIFont.systemFont(ofSize: 10)
 let FFont_12:UIFont = UIFont.systemFont(ofSize: 12)
+let FFont_14:UIFont = UIFont.systemFont(ofSize: 14)
+let FFont_16:UIFont = UIFont.systemFont(ofSize: 16)
 let FFont_18:UIFont = UIFont.systemFont(ofSize: 18)
 
 
